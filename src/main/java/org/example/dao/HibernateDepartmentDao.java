@@ -3,15 +3,15 @@ package org.example.dao;
 import org.example.DBConfig;
 import org.example.model.Department;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
-public class DepartmentDao_v2 {
-    public ArrayList<Department> listAllDep() {
+public class HibernateDepartmentDao {
+    public List<Department> findAll() {
         return DBConfig.SESSION_FACTORY.fromTransaction(session ->
-                new ArrayList<>(session.createQuery(
+                session.createSelectionQuery(
                         "FROM Department d ORDER BY d.id", Department.class
-                ).list()));
+                ).getResultList());
     }
 
     public Optional<Department> findById(int id) {

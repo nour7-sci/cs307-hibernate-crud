@@ -7,21 +7,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
-public class DepartmentDao {
+public class JdbcDepartmentDao {
     private final Connection connection;
 
-    public DepartmentDao(Connection conn) {
+    public JdbcDepartmentDao(Connection conn) {
         this.connection = conn;
     }
 
-    public ArrayList<Department> listAllDep() {
+    public List<Department> findAll() {
         String sql = """
                 SELECT department_id, department_name, manager_id
                 FROM HR.DEMO_DEPARTMENTS
                 ORDER BY department_id
                 """;
-        ArrayList<Department> departments = new ArrayList<>();
+        List<Department> departments = new ArrayList<>();
 
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
