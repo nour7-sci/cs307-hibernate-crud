@@ -11,7 +11,9 @@ This project reads Oracle departments with JDBC and demonstrates CRUD with Hiber
 ## Run the examples
 
 1. Connect to Oracle as `hr` in SQL Developer and run [`sql/demo-tables.sql`](sql/demo-tables.sql) as a script (F5).
-2. Set `DB_PASSWORD` to the Oracle HR password in the IntelliJ run configuration for each demo.
+2. Configure the password for the demo you want to run:
+   - **JDBC:** Set `DB_PASSWORD` in the IntelliJ run configuration.
+   - **Hibernate:** Set `hibernate.connection.password` in your local [`hibernate.cfg.xml`](src/main/resources/hibernate.cfg.xml). Replace the example value `hr` if your Oracle password differs. Keep your actual password out of commits.
 3. Run [`JdbcDepartmentDemo`](src/main/java/org/example/JdbcDepartmentDemo.java) to see `JdbcDepartmentDao.findAll()` execute SQL and map each row to a Java object.
 4. Run [`HibernateDepartmentDemo`](src/main/java/org/example/HibernateDepartmentDemo.java) to see `HibernateDepartmentDao.findAll()` read the same rows using Hibernate. The demo then inserts, reads, updates, and deletes a temporary department with ID 6. Leave ID 6 unused before running the demo.
 
