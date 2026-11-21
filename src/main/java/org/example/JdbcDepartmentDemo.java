@@ -11,11 +11,8 @@ public class JdbcDepartmentDemo {
     public static void main(String[] args) throws SQLException {
         String url = System.getenv().getOrDefault(
                 "DB_URL", "jdbc:oracle:thin:@//localhost:1521/FREEPDB1");
-        String user = System.getenv().getOrDefault("DB_USER", "hr");
-        String password = System.getenv("DB_PASSWORD");
-        if (password == null || password.isBlank()) {
-            throw new IllegalStateException("Set DB_PASSWORD before starting the application.");
-        }
+        String user = "hr";
+        String password = "123";
 
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             JdbcDepartmentDao dao = new JdbcDepartmentDao(connection);
