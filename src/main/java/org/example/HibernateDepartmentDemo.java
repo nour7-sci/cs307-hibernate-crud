@@ -18,7 +18,9 @@ public class HibernateDepartmentDemo {
                 throw new IllegalStateException("Department 6 already exists. Choose an unused demo ID.");
             }
 
-            dao.insert(new Department(id, "Math", 4));
+            if (!dao.insert(new Department(id, "Math", 4))) {
+                throw new IllegalStateException("Could not insert department " + id + ". See the error above.");
+            }
             try {
                 Department created = dao.findById(id).orElseThrow();
                 System.out.println("Created: " + created.getName());
