@@ -1,4 +1,4 @@
-# CS307 Hibernate Department CRUD
+# CS307 Hibernate CRUD
 
 This project reads Oracle departments with JDBC and demonstrates CRUD with Hibernate. Both DAOs use the same practice table, `HR.DEMO_DEPARTMENTS`.
 
