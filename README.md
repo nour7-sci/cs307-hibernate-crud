@@ -16,4 +16,4 @@ This project reads Oracle departments with JDBC and demonstrates CRUD with Hiber
 3. Run [`JdbcDepartmentDemo`](src/main/java/org/example/JdbcDepartmentDemo.java) to see `JdbcDepartmentDao.findAll()` execute SQL and map each row to a Java object.
 4. Run [`HibernateDepartmentDemo`](src/main/java/org/example/HibernateDepartmentDemo.java) to see `HibernateDepartmentDao.findAll()` read the same rows using Hibernate. The demo then inserts, reads, updates, and deletes a temporary department with ID 6. Leave ID 6 unused before running the demo.
 
-Hibernate generates no database schema changes. The setup script creates and seeds the practice table.
+Hibernate generates no database schema changes. The setup script creates and seeds the practice table
