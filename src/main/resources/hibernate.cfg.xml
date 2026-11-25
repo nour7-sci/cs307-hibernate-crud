@@ -6,13 +6,17 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@//localhost:1521/FREEPDB1</property>
-        <property name="hibernate.connection.username">hr</property>
-        <property name="hibernate.connection.password">hr</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@//localhost:1522/XE</property>
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.connection.password">system</property>
 
         <property name="hibernate.hbm2ddl.auto">none</property>
         <property name="hibernate.show_sql">true</property>
 
         <mapping class="org.example.model.Department"/>
+        <mapping class="org.example.model.Club"/>
+        <mapping class="org.example.model.Stadium"/>
+        <mapping class="org.example.model.Player"/>
+        <mapping class="org.example.model.Fan"/>
     </session-factory>
 </hibernate-configuration>
